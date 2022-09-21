@@ -1967,7 +1967,6 @@
         "dependencies": {
           "AutoMapper": "11.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
-          "CustomerWebAPI": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.9",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.9"
         },
@@ -1982,6 +1981,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "CustomerData": "1.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.9",
           "Swashbuckle.AspNetCore": "6.2.3"
         },

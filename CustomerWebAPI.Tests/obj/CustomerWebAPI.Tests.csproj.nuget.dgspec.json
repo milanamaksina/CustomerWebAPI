@@ -31,11 +31,7 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\marim\\OneDrive\\Рабочий стол\\CustomerWebAPI\\CustomerWebAPI\\CustomerWebAPI.csproj": {
-                "projectPath": "C:\\Users\\marim\\OneDrive\\Рабочий стол\\CustomerWebAPI\\CustomerWebAPI\\CustomerWebAPI.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -212,7 +208,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\marim\\OneDrive\\Рабочий стол\\CustomerWebAPI\\CustomerData\\CustomerData.csproj": {
+                "projectPath": "C:\\Users\\marim\\OneDrive\\Рабочий стол\\CustomerWebAPI\\CustomerData\\CustomerData.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

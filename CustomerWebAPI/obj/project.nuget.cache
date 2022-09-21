@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "0qYkMMPMz+WkOADYu71heW8HMSaVf2bS61cNIdTmCgfvwEvHmT5aYEskPgimJwwdCTap+4qwpuifxDrlyNE5WA==",
+  "dgSpecHash": "RMfGrLXSwJqYEpC51oa9RxAdBrVbTjw0xLM4GZY02HtsTS41Hq4oZCqvBXGUhV/e7Cw9vtGH34LiyuqOatFXNQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\marim\\OneDrive\\Рабочий стол\\CustomerWebAPI\\CustomerWebAPI\\CustomerWebAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\marim\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\marim\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\marim\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.9\\microsoft.entityframeworkcore.abstractions.6.0.9.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.9\\microsoft.entityframeworkcore.analyzers.6.0.9.nupkg.sha512",

@@ -17,8 +17,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CustomerWebAPI\CustomerWebAPI.csproj" />
-  </ItemGroup>
-
 </Project>
