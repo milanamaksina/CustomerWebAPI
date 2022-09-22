@@ -1,8 +1,7 @@
-﻿using CustomerData.Repositories;
-using CustomerData.Repositories.Interfaces;
+﻿using CustomerData.Entities;
+using CustomerData.Repositories;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Microsoft.EntityFrameworkCore;
 
 namespace CustomerWebAPI.Controllers
 {
@@ -17,37 +16,70 @@ namespace CustomerWebAPI.Controllers
             _customerRepository = customerRepository;
         }
 
-        // GET: api/<CustomerController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult GetCustomers()
         {
-            return new string[] { "value1", "value2" };
+            var customers = _customerRepository.GetCustomers();
+            if (customers == null)
+                return NotFound();
+            else
+                return Ok(customers);
         }
 
-        // GET api/<CustomerController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult GetCustomerById(int id)
         {
-            return "value";
+            var customer = _customerRepository.GetCustomerById(id);
+
+            if (customer != null)
+                return Ok(customer);
+            else
+                return NotFound(id);
         }
 
-        // POST api/<CustomerController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult CreateCustomer(Customer customer)
         {
+            var newCustomer = _customerRepository.CreateCustomer(customer);
+
+            if (newCustomer != null)
+                return Ok(newCustomer);
+            else 
+                return NoContent();
         }
 
-        // PUT api/<CustomerController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult UpdateCustomer(int id, Customer customer)
         {
+            try
+            {
+                _customerRepository.UpdateCustomer(customer);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (_customerRepository.GetCustomerById(id) == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return NoContent();
         }
 
-        // DELETE api/<CustomerController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var customer = _customerRepository.GetCustomerById(id);
 
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            _customerRepository.DeleteCustomer(id);
+            return Ok(id);
         }
     }
 }
