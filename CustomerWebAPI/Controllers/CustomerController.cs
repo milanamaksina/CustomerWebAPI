@@ -49,7 +49,7 @@ namespace CustomerWebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateCustomer(int id, Customer customer)
+        public IActionResult EditCustomer(int id, Customer customer)
         {
             try
             {
