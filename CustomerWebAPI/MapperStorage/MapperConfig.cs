@@ -4,7 +4,7 @@ using CustomerWebAPI.Models;
 using CustomerWebAPI.Models.Requests;
 using CustomerWebAPI.Models.Responses;
 
-namespace CustomerWebAPI.Mapper
+namespace CustomerWebAPI.MapperStorage
 {
     public class MapperConfig: Profile
     {

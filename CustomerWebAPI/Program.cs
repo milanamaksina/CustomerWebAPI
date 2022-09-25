@@ -1,6 +1,6 @@
 using CustomerData.Contexts;
 using CustomerWebAPI.Extensions;
-using CustomerWebAPI.Mapper;
+using CustomerWebAPI.MapperStorage;
 using Microsoft.EntityFrameworkCore;
 
 
