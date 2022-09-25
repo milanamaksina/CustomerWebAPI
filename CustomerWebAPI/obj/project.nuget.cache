@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "RrDJvYABvLf1aNYgLXTUpH1xL7TAUjSeM6ihUV5BXKsvlu6urAyBYU0HrP+WkNwodYKU8hTnpkwUlvEI43tLew==",
+  "dgSpecHash": "9lxooLbohbleW5WAFjJ/8hv/ZNCQt4+smlM39loxzQntUzNteXuqmdgQw7wGJERk5IhvX3xbdEVMEU4TWEjpqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\marim\\OneDrive\\Рабочий стол\\CustomerWebAPI\\CustomerWebAPI\\CustomerWebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marim\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\marim\\.nuget\\packages\\automapper.collection\\8.0.0\\automapper.collection.8.0.0.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.9\\microsoft.aspnetcore.authorization.6.0.9.nupkg.sha512",

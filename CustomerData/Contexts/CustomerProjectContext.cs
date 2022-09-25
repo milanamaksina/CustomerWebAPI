@@ -28,8 +28,6 @@ namespace CustomerData.Contexts
                 entity.Property(r => r.City).HasMaxLength(50);
                 entity.Property(r => r.PostalCode).HasMaxLength(6);
                 entity.Property(r => r.State).HasMaxLength(20);
-                //entity.Property(r => r.AddressType).Has;
-
             });
 
             modelBuilder.Entity<Customer>(entity =>

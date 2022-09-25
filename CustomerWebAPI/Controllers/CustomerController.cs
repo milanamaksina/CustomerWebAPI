@@ -59,7 +59,7 @@ namespace CustomerWebAPI.Controllers
         {
             try
             {
-                _customerRepository.UpdateCustomer(_mapper.Map<Customer>(customer));
+                _customerRepository.UpdateCustomer(_mapper.Map<Customer>(customer), id);
             }
             catch (DbUpdateConcurrencyException)
             {

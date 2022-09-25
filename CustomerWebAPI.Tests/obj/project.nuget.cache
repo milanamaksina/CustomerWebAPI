@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KkRe26nu/o1RlIkmoAWs6uY5KFX61uWkWBCor9kQ8K3SalZzzzTHtM11vGGB7idDzneX5sYY5BwIAXQNK2UKog==",
+  "dgSpecHash": "JYiqAWRJWA/Z5l8gcQdzZlGGfCwfbNNljj9H9KLa26lmMs5kiJUFsUByuo7w/tJtDoInzioEFUH6dM9Cpz0Nvg==",
   "success": true,
   "projectFilePath": "C:\\Users\\marim\\OneDrive\\Рабочий стол\\CustomerWebAPI\\CustomerWebAPI.Tests\\CustomerWebAPI.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marim\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\marim\\.nuget\\packages\\automapper.collection\\8.0.0\\automapper.collection.8.0.0.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.9\\microsoft.aspnetcore.authorization.6.0.9.nupkg.sha512",

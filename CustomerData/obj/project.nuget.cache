@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ot0kFuxgSuzU7OG0Kp2Jm2gvUm2NpWbcXiQGmW69UVkJolaQyRW2e25X0anLoBdMnPraNFRz4QnNVBHsKOVjbA==",
+  "dgSpecHash": "H6OaKIKnjHQkG3PbcjonzocIyNY57Z9hdhJhhs2usGtsC84DEFDpNwh8j3kjBNQDT8jzKK6dsNYIkEhmrxgTCg==",
   "success": true,
   "projectFilePath": "C:\\Users\\marim\\OneDrive\\Рабочий стол\\CustomerWebAPI\\CustomerData\\CustomerData.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marim\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\marim\\.nuget\\packages\\automapper.collection\\8.0.0\\automapper.collection.8.0.0.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\marim\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

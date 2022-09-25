@@ -29,16 +29,16 @@ namespace CustomerData.Repositories
             _context.Customers.Remove(customer);
             _context.SaveChanges();
         }
-        public void UpdateCustomer(Customer customer)
+        public void UpdateCustomer(Customer newModelCustomer, int id)
         {
-            var newCustomer = _context.Customers.FirstOrDefault(c => c.Id == customer.Id);
-            newCustomer.FirstName=customer.FirstName;
-            newCustomer.LastName=customer.LastName;
-            newCustomer.Phone=customer.Phone;
-            newCustomer.Email = customer.Email;
-            newCustomer.TotalPurchasesAmount = customer.TotalPurchasesAmount;
-            newCustomer.Addresses = customer.Addresses;
-            newCustomer.Notes = customer.Notes;
+            var customer = GetCustomerById(id);
+            //customer.FirstName=newModelCustomer.FirstName;
+            //customer.LastName=newModelCustomer.LastName;
+            //customer.Phone=newModelCustomer.Phone;
+            //customer.Email = newModelCustomer.Email;
+            //customer.TotalPurchasesAmount = newModelCustomer.TotalPurchasesAmount;
+            //customer.Addresses = newModelCustomer.Addresses;
+            //customer.Notes = newModelCustomer.Notes;
 
             _context.Customers.Update(customer);
             _context.SaveChanges();

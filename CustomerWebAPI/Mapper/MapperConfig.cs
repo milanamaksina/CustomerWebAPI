@@ -6,16 +6,18 @@ using CustomerWebAPI.Models.Responses;
 
 namespace CustomerWebAPI.Mapper
 {
-    public class MapperConfiguration: Profile
+    public class MapperConfig: Profile
     {
-        public MapperConfiguration()
+        public MapperConfig()
         {
             CreateMap<Customer, CustomerResponse>();
-            CreateMap<CustomerCreateRequest, Customer>().ReverseMap();
+            CreateMap<CustomerCreateRequest, Customer>();
             CreateMap<CustomerUpdateRequest, Customer>();
+            CreateMap<Address, AddressResponse>();
             CreateMap<Address, AddressResponse>();
             CreateMap<AddressCreateRequest, Address>();
             CreateMap<AddressUpdateRequest, Address>();
+
         }
     }
 }

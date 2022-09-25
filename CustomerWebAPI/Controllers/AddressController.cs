@@ -25,11 +25,11 @@ namespace CustomerWebAPI.Controllers
         public ActionResult GetAdresses()
         {
             var addresses = _addressRepository.GetAddresses();
-          
+
             if (addresses == null)
                 return NotFound();
             else
-                return Ok(_mapper.Map<AddressResponse>(addresses));
+                return Ok(_mapper.Map<List<AddressResponse>>(addresses));
         }
 
         [HttpGet("{id}")]
@@ -40,7 +40,7 @@ namespace CustomerWebAPI.Controllers
             if (address != null)
                 return Ok(_mapper.Map<AddressResponse>(address));
             else
-                return NotFound(id);
+                return NotFound();
         }
 
         [HttpPost()]
@@ -55,7 +55,7 @@ namespace CustomerWebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult EditAddress(int id, AddressUpdateRequest address)
+        public ActionResult EditAddress([FromRoute]int id,[FromBody] AddressUpdateRequest address)
         {
             try
             {

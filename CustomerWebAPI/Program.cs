@@ -1,7 +1,6 @@
-using AutoMapper;
 using CustomerData.Contexts;
 using CustomerWebAPI.Extensions;
-
+using CustomerWebAPI.Mapper;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -13,13 +12,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRepositories();
-builder.Services.AddAutoMapper(typeof(MapperConfiguration));
 
 builder.Services.AddDbContext<CustomerProjectContext>(o =>
 {
     
     o.UseSqlServer(@"Server=.;Database=Maksina_Customer.db;Trusted_Connection=True;");
 });
+builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 var app = builder.Build();
 

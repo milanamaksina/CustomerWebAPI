@@ -7,7 +7,7 @@ namespace CustomerData.Repositories
         int CreateCustomer(Customer entity);
         List<Customer> GetCustomers();
         void DeleteCustomer(int Id);
-        void UpdateCustomer(Customer entity);
+        void UpdateCustomer(Customer entity, int id);
         Customer? GetCustomerById(int Id);
     }
 }
