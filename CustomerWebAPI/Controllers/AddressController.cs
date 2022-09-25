@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CustomerWebAPI.Controllers
 {
+    [Route("[controller]")]
+    [ApiController]
     public class AddressController : ControllerBase
     {
         private readonly IAddressRepository _addressRepository;
@@ -14,8 +16,8 @@ namespace CustomerWebAPI.Controllers
             _addressRepository = addressRepository;
         }
 
-        // GET: AddressControlle
-        public IActionResult GetAdresses()
+        [HttpGet()]
+        public ActionResult GetAdresses()
         {
             var addresses = _addressRepository.GetAddresses();
             if (addresses == null)
@@ -24,8 +26,8 @@ namespace CustomerWebAPI.Controllers
                 return Ok(addresses);
         }
 
-        // GET: AddressController/Details/5
-        public IActionResult GetAddressById(int id)
+        [HttpGet("{id}")]
+        public ActionResult GetAddressById(int id)
         {
             var address = _addressRepository.GetAddressById(id);
 
@@ -35,9 +37,7 @@ namespace CustomerWebAPI.Controllers
                 return NotFound(id);
         }
 
-        // POST: AddressController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost()]
         public ActionResult CreateAddress(Address address)
         {
             var newAddress = _addressRepository.CreateAddress(address);
@@ -48,8 +48,7 @@ namespace CustomerWebAPI.Controllers
                 return NoContent();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPut("{id}")]
         public ActionResult EditAddress(int id, Address address)
         {
             try
@@ -70,19 +69,17 @@ namespace CustomerWebAPI.Controllers
             return NoContent();
         }
 
-        // POST: AddressController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
         {
-            try
+            var address = _addressRepository.GetAddressById(id);
+
+            if (address == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
+            _addressRepository.DeleteAddress(id);
+            return Ok(id);
         }
     }
 }

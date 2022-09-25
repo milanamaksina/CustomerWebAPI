@@ -1,23 +1,29 @@
-﻿using CustomerData.Entities;
+﻿using AutoMapper;
+using CustomerData.Entities;
 using CustomerData.Repositories;
+using CustomerWebAPI.Models;
+using CustomerWebAPI.Models.Requests;
+using CustomerWebAPI.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CustomerWebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerRepository _customerRepository;
+        private readonly IMapper _mapper;
 
-        public CustomerController(ICustomerRepository customerRepository)
+        public CustomerController(ICustomerRepository customerRepository, IMapper mapper)
         {
             _customerRepository = customerRepository;
+            _mapper = mapper;
         }
 
-        [HttpGet]
-        public IActionResult GetCustomers()
+        [HttpGet()]
+        public ActionResult GetCustomers()
         {
             var customers = _customerRepository.GetCustomers();
             if (customers == null)
@@ -27,20 +33,20 @@ namespace CustomerWebAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetCustomerById(int id)
+        public ActionResult GetCustomerById(int id)
         {
             var customer = _customerRepository.GetCustomerById(id);
 
             if (customer != null)
-                return Ok(customer);
+                return Ok(_mapper.Map<CustomerResponse>(customer));
             else
                 return NotFound(id);
         }
 
-        [HttpPost]
-        public IActionResult CreateCustomer(Customer customer)
+        [HttpPost()]
+        public ActionResult CreateCustomer(CustomerCreateRequest customer)
         {
-            var newCustomer = _customerRepository.CreateCustomer(customer);
+            var newCustomer = _customerRepository.CreateCustomer(_mapper.Map<Customer>(customer));
 
             if (newCustomer != null)
                 return Ok(newCustomer);
@@ -49,11 +55,11 @@ namespace CustomerWebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult EditCustomer(int id, Customer customer)
+        public ActionResult EditCustomer(int id, CustomerUpdateRequest customer)
         {
             try
             {
-                _customerRepository.UpdateCustomer(customer);
+                _customerRepository.UpdateCustomer(_mapper.Map<Customer>(customer));
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -70,7 +76,7 @@ namespace CustomerWebAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public ActionResult Delete(int id)
         {
             var customer = _customerRepository.GetCustomerById(id);
 

@@ -29,3 +29,7 @@ C:\Users\marim\OneDrive\Рабочий стол\CustomerWebAPI\CustomerWebAPI\ob
 C:\Users\marim\OneDrive\Рабочий стол\CustomerWebAPI\CustomerWebAPI\obj\Debug\net6.0\CustomerWebAPI.pdb
 C:\Users\marim\OneDrive\Рабочий стол\CustomerWebAPI\CustomerWebAPI\obj\Debug\net6.0\CustomerWebAPI.genruntimeconfig.cache
 C:\Users\marim\OneDrive\Рабочий стол\CustomerWebAPI\CustomerWebAPI\obj\Debug\net6.0\ref\CustomerWebAPI.dll
+C:\Users\marim\OneDrive\Рабочий стол\CustomerWebAPI\CustomerWebAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\marim\OneDrive\Рабочий стол\CustomerWebAPI\CustomerWebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\marim\OneDrive\Рабочий стол\CustomerWebAPI\CustomerWebAPI\bin\Debug\net6.0\CustomerData.dll
+C:\Users\marim\OneDrive\Рабочий стол\CustomerWebAPI\CustomerWebAPI\bin\Debug\net6.0\CustomerData.pdb
