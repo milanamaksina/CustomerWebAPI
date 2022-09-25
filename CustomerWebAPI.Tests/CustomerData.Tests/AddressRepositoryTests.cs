@@ -1,5 +1,6 @@
 ﻿using CustomerData.Contexts;
 using CustomerData.Entities;
+using CustomerData.Enums;
 using CustomerData.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
@@ -27,7 +28,7 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
                 AddressId = 1,
                 AddressLine = "Pearl",
                 AddressLine2 = "",
-                //AddressType = "Shipping",
+                AddressType = AddressType.Shipping,
                 City = "Toronto",
                 PostalCode = "1",
                 State = "",
@@ -52,7 +53,7 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
                 AddressId = 1,
                 AddressLine = "Pearl",
                 AddressLine2 = "",
-               // AddressType = "Shipping",
+                AddressType = AddressType.Shipping,
                 City = "Toronto",
                 PostalCode = "1",
                 State = "",
@@ -76,7 +77,7 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
                 AddressId = 1,
                 AddressLine = "Pearl",
                 AddressLine2 = "",
-                //AddressType = "Shipping",
+                AddressType = AddressType.Shipping,
                 City = "Toronto",
                 PostalCode = "1",
                 State = "",
@@ -103,7 +104,7 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
                 AddressId = 1,
                 AddressLine = "Pearl",
                 AddressLine2 = "",
-               // AddressType = "Shipping",
+                AddressType = AddressType.Shipping,
                 City = "Toronto",
                 PostalCode = "1",
                 State = "",
@@ -114,7 +115,7 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
             address.AddressLine = newAddressLine;
             address.PostalCode = newPostalCode;
 
-            //sut.UpdateAddress(address);
+            sut.UpdateAddress(address, 1);
             var result = sut.GetAddressById(address.AddressId);
 
             Assert.NotNull(result);
@@ -132,7 +133,7 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
                 AddressId = 1,
                 AddressLine = "Pearl",
                 AddressLine2 = "",
-               // AddressType = "Shipping",
+                AddressType = AddressType.Shipping,
                 City = "Toronto",
                 PostalCode = "1",
                 State = "",
