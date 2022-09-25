@@ -7,7 +7,7 @@ namespace CustomerData.Repositories.Interfaces
         int CreateAddress(Address entity);
         List<Address> GetAddresses();
         void DeleteAddress(int Id);
-        void UpdateAddress(Address entity);
+        void UpdateAddress(Address entity, int id);
         Address? GetAddressById(int Id);
 
     }

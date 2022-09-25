@@ -128,7 +128,7 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
             customer.FirstName = newName;
             customer.LastName = newLastName;
 
-            sut.UpdateCustomer(customer);
+            //sut.UpdateCustomer(customer);
             var result = sut.GetCustomerById(1);
 
             Assert.NotNull(result);

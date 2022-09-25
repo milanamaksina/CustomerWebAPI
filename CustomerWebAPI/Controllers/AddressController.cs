@@ -59,7 +59,7 @@ namespace CustomerWebAPI.Controllers
         {
             try
             {
-                _addressRepository.UpdateAddress(_mapper.Map<Address>(address));
+                _addressRepository.UpdateAddress(_mapper.Map<Address>(address), id);
             }
             catch (DbUpdateConcurrencyException)
             {
