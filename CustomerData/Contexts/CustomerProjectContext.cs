@@ -10,7 +10,6 @@ namespace CustomerData.Contexts
 
         public CustomerProjectContext(DbContextOptions<CustomerProjectContext> options) : base(options)
         {
-            //Database.EnsureCreated();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,6 +22,27 @@ namespace CustomerData.Contexts
                 entity
                 .HasOne(a => a.Customer)
                 .WithMany(c => c.Addresses);
+
+                entity.Property(r => r.AddressLine).HasMaxLength(100);
+                entity.Property(r => r.AddressLine2).HasMaxLength(100);
+                entity.Property(r => r.City).HasMaxLength(50);
+                entity.Property(r => r.PostalCode).HasMaxLength(6);
+                entity.Property(r => r.State).HasMaxLength(20);
+                //entity.Property(r => r.AddressType).Has;
+
+            });
+
+            modelBuilder.Entity<Customer>(entity =>
+            {
+                entity.ToTable(nameof(Customer));
+                entity.HasKey(c => c.Id);
+                entity.Property(r => r.FirstName).HasMaxLength(50);
+                entity.Property(r => r.LastName).HasMaxLength(50);
+                entity.Property(r => r.Phone).HasMaxLength(15);
+                entity.Property(r => r.Notes).HasMaxLength(255);
+                entity.Property(r => r.Email).HasMaxLength(255);
+                entity.Property(c => c.TotalPurchasesAmount)
+                .HasPrecision(7, 2);
             });
         }
     }

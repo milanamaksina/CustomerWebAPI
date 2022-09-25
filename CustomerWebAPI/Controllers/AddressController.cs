@@ -1,5 +1,8 @@
-﻿using CustomerData.Entities;
+﻿using AutoMapper;
+using CustomerData.Entities;
 using CustomerData.Repositories.Interfaces;
+using CustomerWebAPI.Models.Requests;
+using CustomerWebAPI.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,20 +13,23 @@ namespace CustomerWebAPI.Controllers
     public class AddressController : ControllerBase
     {
         private readonly IAddressRepository _addressRepository;
+        private readonly IMapper _mapper;
 
-        public AddressController(IAddressRepository addressRepository)
+        public AddressController(IAddressRepository addressRepository, IMapper mapper)
         {
             _addressRepository = addressRepository;
+            _mapper = mapper;   
         }
 
         [HttpGet()]
         public ActionResult GetAdresses()
         {
             var addresses = _addressRepository.GetAddresses();
+          
             if (addresses == null)
                 return NotFound();
             else
-                return Ok(addresses);
+                return Ok(_mapper.Map<AddressResponse>(addresses));
         }
 
         [HttpGet("{id}")]
@@ -32,28 +38,28 @@ namespace CustomerWebAPI.Controllers
             var address = _addressRepository.GetAddressById(id);
 
             if (address != null)
-                return Ok(address);
+                return Ok(_mapper.Map<AddressResponse>(address));
             else
                 return NotFound(id);
         }
 
         [HttpPost()]
-        public ActionResult CreateAddress(Address address)
+        public ActionResult CreateAddress(AddressCreateRequest address)
         {
-            var newAddress = _addressRepository.CreateAddress(address);
+            var newAddressId = _addressRepository.CreateAddress(_mapper.Map<Address>(address));
 
-            if (newAddress != null)
-                return Ok(newAddress);
+            if (newAddressId != null)
+                return Ok(newAddressId);
             else
                 return NoContent();
         }
 
         [HttpPut("{id}")]
-        public ActionResult EditAddress(int id, Address address)
+        public ActionResult EditAddress(int id, AddressUpdateRequest address)
         {
             try
             {
-                _addressRepository.UpdateAddress(address);
+                _addressRepository.UpdateAddress(_mapper.Map<Address>(address));
             }
             catch (DbUpdateConcurrencyException)
             {

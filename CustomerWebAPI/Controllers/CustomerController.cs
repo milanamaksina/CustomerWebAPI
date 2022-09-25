@@ -46,10 +46,10 @@ namespace CustomerWebAPI.Controllers
         [HttpPost()]
         public ActionResult CreateCustomer(CustomerCreateRequest customer)
         {
-            var newCustomer = _customerRepository.CreateCustomer(_mapper.Map<Customer>(customer));
+            var newCustomerId = _customerRepository.CreateCustomer(_mapper.Map<Customer>(customer));
 
-            if (newCustomer != null)
-                return Ok(newCustomer);
+            if (newCustomerId != null)
+                return Ok(newCustomerId);
             else 
                 return NoContent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace CustomerWebAPI.Models.Requests
 {
-    public class AddressUpdateRequestcs
+    public class AddressUpdateRequest
     {
         public int CustomerId { get; set; }
         public string AddressLine { get; set; }

@@ -11,8 +11,11 @@ namespace CustomerWebAPI.Mapper
         public MapperConfiguration()
         {
             CreateMap<Customer, CustomerResponse>();
-            CreateMap<CustomerCreateRequest, Customer>();
+            CreateMap<CustomerCreateRequest, Customer>().ReverseMap();
             CreateMap<CustomerUpdateRequest, Customer>();
+            CreateMap<Address, AddressResponse>();
+            CreateMap<AddressCreateRequest, Address>();
+            CreateMap<AddressUpdateRequest, Address>();
         }
     }
 }

@@ -30,7 +30,9 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
                 Phone = "+16123045652",
                 Email = "potter@gmail.com",
                 TotalPurchasesAmount = 0,
-                Addresses = new() { new Address() { AddressId = 1, CustomerId = 1, AddressLine = "Pearl Street", AddressLine2 = "", AddressType = "Shipping", PostalCode = "123321", City = "Toronto", State = "", Country = "Canada" } },
+                Addresses = new() { new Address() { AddressId = 1, CustomerId = 1, AddressLine = "Pearl Street", AddressLine2 = "",
+                    //AddressType = "Shipping",
+                    PostalCode = "123321", City = "Toronto", State = "", Country = "Canada" } },
                 Notes = "note1"
             };
             context.Customers.Add(customer);
@@ -56,7 +58,9 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
                 Phone = "+16123045652",
                 Email = "potter@gmail.com",
                 TotalPurchasesAmount = 0,
-                Addresses = new() { new Address() { AddressId = 1, CustomerId = 1, AddressLine = "Pearl Street", AddressLine2 = "", AddressType = "Shipping", PostalCode = "123321", City = "Toronto", State = "", Country = "Canada" } },
+                Addresses = new() { new Address() { AddressId = 1, CustomerId = 1, AddressLine = "Pearl Street", AddressLine2 = "", 
+                    //AddressType = "Shipping", 
+                    PostalCode = "123321", City = "Toronto", State = "", Country = "Canada" } },
                 Notes = "note1"
             };
 
@@ -80,7 +84,13 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
                 Phone = "+16123045652",
                 Email = "potter@gmail.com",
                 TotalPurchasesAmount = 0,
-                Addresses = new() { new Address() { AddressId = 1, CustomerId = 1, AddressLine = "Pearl Street", AddressLine2 = "", AddressType = "Shipping", PostalCode = "123321", City = "Toronto", State = "", Country = "Canada" } }, 
+                Addresses = new() { new Address() {
+                    AddressId = 1, 
+                    CustomerId = 1, 
+                    AddressLine = "Pearl Street", 
+                    AddressLine2 = "", 
+                    //AddressType = "Shipping", 
+                    PostalCode = "123321", City = "Toronto", State = "", Country = "Canada" } }, 
                 Notes = "note1"
             };
             context.Customers.Add(customer);
@@ -108,7 +118,9 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
                 Phone = "+16123045652",
                 Email = "potter@gmail.com",
                 TotalPurchasesAmount = 0,
-                Addresses = new() { new Address() { AddressId = 1, CustomerId = 1, AddressLine = "Pearl Street", AddressLine2 = "", AddressType = "Shipping", PostalCode = "123321", City = "Toronto", State = "", Country = "Canada" } },
+                Addresses = new() { new Address() { AddressId = 1, CustomerId = 1, AddressLine = "Pearl Street", AddressLine2 = "", 
+                    //AddressType = "Shipping",
+                    PostalCode = "123321", City = "Toronto", State = "", Country = "Canada" } },
                 Notes = "note1"
             };
             context.Customers.Add(customer);
@@ -137,7 +149,9 @@ namespace CustomerWebAPI.Tests.CustomerData.Tests
                 Phone = "+16123045652",
                 Email = "potter@gmail.com",
                 TotalPurchasesAmount = 0,
-                Addresses = new() { new Address() { AddressId = 1, CustomerId = 1, AddressLine = "Pearl", AddressLine2 = "", AddressType = "Shipping", PostalCode = "1", City = "Toronto", State = "", Country = "Canada" } },
+                Addresses = new() { new Address() { AddressId = 1, CustomerId = 1, AddressLine = "Pearl", AddressLine2 = "",
+                    //AddressType = "Shipping",
+                    PostalCode = "1", City = "Toronto", State = "", Country = "Canada" } },
                 Notes = "note1"
             };
             context.Customers.Add(customer);
